@@ -3,73 +3,171 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Detnexa Technologies — Policies</title>
-<meta name="description" content="Policies for apps published by Detnexa Technologies.">
+<title>Policies | Detnexa Technologies</title>
+<meta name="description" content="Privacy and legal documents for apps published by Detnexa Technologies.">
+<meta name="theme-color" content="#04121a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0d1b24;
-    --muted: #4a6572;
-    --line: #dce6ec;
-    --accent: #0f8f85;
-    --paper: #ffffff;
+    --abyss:    #04121a;
+    --deep:     #071c27;
+    --panel:    #0a2231;
+    --line:     #164050;
+    --ink:      #e6f2f5;
+    --muted:    #9fbcc6;
+    --accent:   #35e0d0;
+    --accent-d: #1aa79b;
+    --r:        16px;
+    --pill:     999px;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e8f1f4;
-      --muted: #9ab0ba;
-      --line: #1e3440;
-      --accent: #35e0d0;
-      --paper: #08141b;
-    }
-  }
-  * { box-sizing: border-box; }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
   body {
     margin: 0;
-    padding: 64px 20px 80px;
-    background: var(--paper);
+    min-height: 100dvh;
+    background: var(--abyss);
     color: var(--ink);
-    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif;
+    font: 400 17px/1.7 "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif;
+    background-image:
+      linear-gradient(180deg, rgba(4,18,26,.70) 0%, rgba(4,18,26,.97) 66%),
+      url("assets/deep-water.jpg");
+    background-size: auto, 100% auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, top center;
   }
-  main { max-width: 680px; margin: 0 auto; }
-  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
-  .sub { color: var(--muted); margin: 0 0 40px; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 76px 0 0; }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 800;
+    font-size: clamp(40px, 8vw, 64px);
+    line-height: 1.04;
+    letter-spacing: -.015em;
+    margin: 0 0 14px;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 52ch;
+    margin: 0 0 54px;
+  }
+
   h2 {
-    font-size: 19px;
-    margin: 40px 0 12px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
+    font-family: "Outfit", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
   }
-  ul { list-style: none; padding: 0; margin: 0; }
-  li { margin: 0 0 10px; }
-  a { color: var(--accent); }
-  .meta { color: var(--muted); font-size: 14px; }
-  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+
+  /* The one card on the page is the one thing people came for, so it gets
+     the artwork rather than a hairline row in a list. */
+  .doc {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: var(--deep);
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .doc:hover { border-color: var(--accent-d); transform: translateY(-2px); }
+  .doc:active { transform: translateY(0); }
+  .doc:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .doc img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    /* The wordmark and tagline occupy 186px to 342px of the banner's 500px
+       height. At this card's scale that band only sits fully inside the crop
+       from about 45% down, so anything higher slices the tagline in half. */
+    object-position: center 55%;
+  }
+  .doc-body { padding: 22px 24px 24px; }
+  .doc-title {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin: 0 0 6px;
+  }
+  .doc-meta { color: var(--muted); font-size: 15px; margin: 0; }
+  .doc-go {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 9px 20px;
+    border-radius: var(--pill);
+    background: var(--accent);
+    color: #03151d;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .contact { margin: 60px 0 0; padding-top: 34px; border-top: 1px solid var(--line); }
+  .contact p { margin: 0 0 10px; max-width: 60ch; }
+  a.mail { color: var(--accent); text-decoration-color: var(--accent-d); text-underline-offset: 3px; }
+  a.mail:hover { color: #6ff0e4; }
+  a.mail:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+  footer { color: var(--muted); font-size: 14px; padding: 44px 0 64px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    header { padding-top: 48px; }
+    .lede { margin-bottom: 40px; }
+    .doc img { height: 118px; }
+    .doc-body { padding: 18px 18px 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <h1>Policies</h1>
-  <p class="sub">Legal and privacy documents for apps published by Detnexa
-    Technologies.</p>
+<div class="wrap">
+
+  <header>
+    <h1>Policies</h1>
+    <p class="lede">Privacy and legal documents for the apps we publish.</p>
+  </header>
 
   <h2>Squeeze</h2>
-  <ul>
-    <li>
-      <a href="privacy.html">Privacy Policy</a>
-      <div class="meta">Last updated 26 September 2026</div>
-    </li>
-  </ul>
 
-  <h2>Contact</h2>
-  <p>
-    Privacy questions:
-    <a href="mailto:privacy@detnexatechnologies.com">privacy@detnexatechnologies.com</a><br>
-    Everything else:
-    <a href="mailto:support@detnexatechnologies.com">support@detnexatechnologies.com</a>
-  </p>
+  <a class="doc" href="privacy.html">
+    <img src="assets/squeeze-banner.jpg" width="1024" height="500" alt=""
+         aria-hidden="true">
+    <div class="doc-body">
+      <p class="doc-title">Privacy Policy</p>
+      <p class="doc-meta">What the game keeps on your phone, what the ads see,
+        and how to switch that off. Last updated 26 September 2026.</p>
+      <span class="doc-go">Read it</span>
+    </div>
+  </a>
+
+  <section class="contact">
+    <p>Privacy questions:
+      <a class="mail" href="mailto:privacy@detnexatechnologies.com">privacy@detnexatechnologies.com</a></p>
+    <p>Everything else:
+      <a class="mail" href="mailto:support@detnexatechnologies.com">support@detnexatechnologies.com</a></p>
+  </section>
 
   <footer>Detnexa Technologies</footer>
-</main>
+
+</div>
 </body>
 </html>

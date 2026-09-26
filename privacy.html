@@ -3,211 +3,403 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Squeeze — Privacy Policy</title>
+<title>Privacy Policy | Squeeze</title>
+<meta name="description" content="What Squeeze stores, what the ads see, and what leaves your phone. Squeeze has no accounts and no server.">
+<meta name="theme-color" content="#04121a">
+<meta property="og:title" content="Squeeze Privacy Policy">
+<meta property="og:description" content="No accounts, no server, no analytics. Here is exactly what leaves your phone and how to stop it.">
+<meta property="og:image" content="https://policies.detnexatechnologies.com/assets/squeeze-banner.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* Squeeze lives underwater and in the dark, so this page does too. The
+     theme is locked rather than following prefers-color-scheme: a bright
+     paper version of this page would not look like the same product. */
   :root {
-    --ink: #0d1b24;
-    --muted: #4a6572;
-    --line: #dce6ec;
-    --accent: #0f8f85;
-    --paper: #ffffff;
+    --abyss:    #04121a;
+    --deep:     #071c27;
+    --panel:    #0a2231;
+    --line:     #164050;
+    --ink:      #e6f2f5;
+    --muted:    #9fbcc6;
+    --accent:   #35e0d0;
+    --accent-d: #1aa79b;
+    --on-accent:#03151d;
+
+    /* One radius scale for the whole page: 16px on surfaces, full pill on
+       anything interactive. Nothing else gets a corner. */
+    --r:        16px;
+    --pill:     999px;
+
+    --measure:  64ch;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e8f1f4;
-      --muted: #9ab0ba;
-      --line: #1e3440;
-      --accent: #35e0d0;
-      --paper: #08141b;
-    }
-  }
-  * { box-sizing: border-box; }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
   body {
     margin: 0;
-    padding: 48px 20px 80px;
-    background: var(--paper);
+    background: var(--abyss);
     color: var(--ink);
-    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif;
+    font: 400 17px/1.7 "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif;
+    /* A slice of open water, dimmed hard, sits behind everything so the page
+       has depth without competing with the text. */
+    background-image:
+      linear-gradient(180deg, rgba(4,18,26,.72) 0%, rgba(4,18,26,.97) 62%),
+      url("assets/deep-water.jpg");
+    background-size: auto, 100% auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, top center;
+    background-attachment: scroll;
   }
-  main { max-width: 680px; margin: 0 auto; }
-  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; }
-  .updated { color: var(--muted); font-size: 14px; margin: 0 0 36px; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- masthead ---------- */
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 0 26px;
+    font-size: 14px;
+    letter-spacing: .01em;
+  }
+  .top a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .18s ease, border-color .18s ease;
+  }
+  .top a:hover { color: var(--accent); border-bottom-color: var(--accent-d); }
+  .top a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 800;
+    font-size: clamp(38px, 8vw, 62px);
+    line-height: 1.04;
+    letter-spacing: -.015em;
+    margin: 34px 0 12px;
+  }
+
+  .dateline {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 40px;
+  }
+  .dateline strong { color: var(--ink); font-weight: 500; }
+
+  /* ---------- the summary up top ---------- */
+
+  .summary {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 26px 28px 28px;
+    margin: 0 0 12px;
+  }
+  .summary::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 22px; bottom: 22px;
+    width: 3px;
+    border-radius: var(--pill);
+    background: linear-gradient(180deg, var(--accent), transparent);
+  }
+  .summary h2 {
+    font-family: "Outfit", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+    border: 0;
+    padding: 0;
+  }
+  .summary p { margin: 0 0 14px; }
+  .summary p:last-child { margin-bottom: 0; }
+
+  /* ---------- body ---------- */
+
   h2 {
-    font-size: 19px;
-    margin: 36px 0 10px;
-    padding-top: 22px;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    margin: 52px 0 14px;
+    padding-top: 30px;
     border-top: 1px solid var(--line);
   }
-  h3 { font-size: 16px; margin: 24px 0 8px; }
-  p, li { color: var(--ink); }
-  ul { padding-left: 20px; }
-  li { margin: 6px 0; }
-  a { color: var(--accent); }
-  .lede {
-    background: color-mix(in srgb, var(--accent) 9%, transparent);
-    border-left: 3px solid var(--accent);
-    padding: 14px 16px;
-    border-radius: 0 8px 8px 0;
+
+  h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 32px 0 10px;
+    color: var(--ink);
   }
-  footer { margin-top: 44px; color: var(--muted); font-size: 14px; }
+
+  p { margin: 0 0 18px; max-width: var(--measure); }
+
+  a { color: var(--accent); text-decoration-color: var(--accent-d); text-underline-offset: 3px; }
+  a:hover { color: #6ff0e4; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+  strong { font-weight: 600; color: #fff; }
+
+  /* ---------- the choices list ---------- */
+
+  .choices { list-style: none; margin: 22px 0 8px; padding: 0; max-width: var(--measure); }
+  .choices li {
+    padding: 16px 0 18px 26px;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+  /* No closing rule on the last item: the next heading's border-top already
+     draws one, and two hairlines a few pixels apart reads as a mistake. */
+  .choices li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: 27px;
+    width: 10px; height: 2px;
+    border-radius: var(--pill);
+    background: var(--accent);
+  }
+  .choices b { display: block; font-weight: 600; color: #fff; margin-bottom: 2px; }
+
+  /* ---------- the "does not" grid ---------- */
+
+  .nots {
+    list-style: none;
+    margin: 26px 0 8px;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nots li {
+    background: linear-gradient(160deg, rgba(53,224,208,.07), rgba(10,34,49,.6));
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 18px 20px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .nots li:first-child { grid-column: 1 / -1; }
+  .nots b { color: #fff; font-weight: 600; }
+
+  /* ---------- contact, over the seabed ---------- */
+
+  .contact {
+    margin: 60px 0 0;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: var(--deep);
+  }
+  .reef {
+    display: block;
+    width: 100%;
+    height: 132px;
+    object-fit: cover;
+    object-position: center 64%;
+    /* Dissolve the seabed into the panel instead of stopping at a hard
+       horizontal cut across the middle of the card. */
+    -webkit-mask-image: linear-gradient(180deg, #000 52%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 52%, transparent 100%);
+  }
+  .contact-body { padding: 24px 26px 28px; }
+  .contact h2 { margin: 0 0 14px; padding: 0; border: 0; font-size: 24px; }
+  .contact p { margin: 0 0 10px; }
+  .contact .who { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+
+  footer {
+    color: var(--muted);
+    font-size: 14px;
+    padding: 34px 0 60px;
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .summary { padding: 22px 20px 24px; }
+    .nots { grid-template-columns: 1fr; }
+    .contact-body { padding: 20px 18px 24px; }
+    h2 { font-size: 24px; margin-top: 44px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <h1>Privacy Policy for Squeeze</h1>
-  <p class="updated">Last updated: 26 September 2026</p>
+<div class="wrap">
 
-  <p class="lede">
-    Squeeze has no accounts and no sign-in, and we do not collect your name,
-    your email address or anything else that identifies you. Your progress
-    stays on your device. The one thing that does leave it is an advertising
-    identifier, which the ads in the game need — this page explains exactly
-    what that is and how to switch it off.
-  </p>
+  <nav class="top"><a href="index.html">Detnexa Technologies</a></nav>
 
-  <h2>What the game stores, and where</h2>
-  <p>
-    Squeeze saves your progress on your own device only: best scores, coins,
-    skins you own, Adventure levels, awards and your settings. It is kept in
-    the app's private storage. Uninstalling the app removes it.
-  </p>
-  <p>
-    The game also keeps a count of which hours of the day you tend to play, so
-    that its reminders arrive at a sensible time rather than at random. That
-    count is a list of twenty-four numbers. It never leaves your device, it is
-    not sent to us, and turning reminders off in Settings stops it being used.
-  </p>
-  <p>
-    If you have Android's backup or Apple's iCloud backup turned on, your
-    device may include this save file in its own backup. That is handled by
-    Google or Apple under their own policies, not by us, and we cannot read it.
-  </p>
+  <img class="banner" src="assets/squeeze-banner.jpg" width="1024" height="500"
+       alt="Squeeze: a glowing orb falling through a bioluminescent reef, with a jellyfish, a nautilus shell and coral around it.">
+
+  <h1>Privacy Policy</h1>
+  <p class="dateline">For <strong>Squeeze</strong>, published by Detnexa
+    Technologies. Last updated 26 September 2026.</p>
+
+  <section class="summary">
+    <h2>The short version</h2>
+    <p>Squeeze has no accounts, no sign-in and no server of ours behind it. We
+      never learn your name or your email address. Your save file sits on your
+      phone and nowhere else.</p>
+    <p>One thing does leave your device, and that is the advertising identifier
+      the ads need. You can reset it at any time, or buy the one-off ad removal
+      and be done with it. Everything below is the detail.</p>
+  </section>
+
+  <h2>What the game keeps, and where</h2>
+  <p>Your progress is stored on your own phone, in the app's private storage.
+    Best scores, coins, the skins you own, which Adventure levels you have
+    finished, your awards, your settings. Uninstall the game and all of it goes
+    with it.</p>
+  <p>There is one other thing in that file worth mentioning. Squeeze counts
+    which hours of the day you tend to play, so that its reminders turn up when
+    you are actually likely to be playing rather than at three in the morning.
+    It is twenty-four numbers and nothing else. It never leaves the phone, we
+    never see it, and turning reminders off in Settings stops it being used at
+    all.</p>
+  <p>If you have Android Backup or Apple's iCloud Backup switched on, your
+    phone may copy that save file into its own backup. That is Google's process
+    or Apple's, running under their policies rather than ours, and we cannot
+    read what ends up there.</p>
 
   <h2>Advertising</h2>
-  <p>
-    Squeeze shows ads through <strong>Google AdMob</strong>. There are three
-    kinds: a banner on the main menu and in the shop, an occasional full-screen
-    ad between runs, and videos you choose to watch in exchange for something
-    in the game. Only the last kind is ever your decision, and nothing in the
-    game is locked behind watching one.
-  </p>
-  <p>
-    To do this, AdMob uses your device's <strong>advertising identifier</strong>
-    — a resettable number your phone gives to apps, which is not your name and
-    is not tied to your Google or Apple account. AdMob may also receive your
-    approximate location (from your IP address), your device model and your
-    operating system version. It uses these to choose an ad and to measure
-    whether it worked. We never see any of it.
-  </p>
-  <p>
-    Google's use of this data is covered by the
+  <p>Squeeze is free and pays for itself with ads, served through
+    <strong>Google AdMob</strong>. There are three kinds: a banner on the main
+    menu and in the shop, a full screen ad between runs now and then, and
+    videos you can choose to watch in exchange for something in the game. Only
+    that last kind is ever your decision, and nothing in Squeeze is locked
+    behind watching one.</p>
+  <p>To choose an ad, AdMob uses your device's <strong>advertising
+    identifier</strong>. That is a resettable number your phone hands to apps.
+    It is not your name and it is not tied to your Google or Apple account.
+    AdMob may also work out roughly where you are from your IP address, and
+    read your device model and operating system version. It uses those to pick
+    an ad and to measure whether the ad worked. None of it reaches us.</p>
+  <p>What Google does with that data is covered by the
     <a href="https://business.safety.google/privacy/">Google Business Data
-    Responsibility page</a> and the
+    Responsibility</a> page and by
     <a href="https://policies.google.com/technologies/partner-sites">How Google
-    uses information from sites or apps that use our services</a> page.
-  </p>
+    uses information from sites or apps that use our services</a>.</p>
 
   <h3>Your choices</h3>
-  <ul>
-    <li><strong>In the European Economic Area, the UK and Switzerland</strong>,
-      the game asks your permission before any ad loads, using Google's own
-      consent form. If you say no to personalised ads, you still see ads, but
-      they are chosen without the identifier.</li>
-    <li><strong>On iOS</strong>, the game asks separately through Apple's App
-      Tracking Transparency prompt. Declining changes nothing about how the
-      game plays.</li>
-    <li><strong>On any device</strong>, you can reset or delete the advertising
-      identifier entirely: on Android under Settings → Privacy → Ads, and on
-      iOS under Settings → Privacy &amp; Security → Tracking.</li>
-    <li><strong>You can remove the ads.</strong> The one-off "Remove ads"
-      purchase in the shop stops the banner and the full-screen ads for good.
-      The reward videos stay available, because they are ones you choose.</li>
+  <ul class="choices">
+    <li><b>In the European Economic Area, the UK and Switzerland</b>
+      Squeeze asks your permission before any ad loads, using Google's own
+      consent form. Say no to personalised ads and you still see ads. They are
+      just chosen without the identifier.</li>
+    <li><b>On iOS</b>
+      Apple asks separately, through its App Tracking Transparency prompt.
+      Declining changes nothing about how the game plays.</li>
+    <li><b>On any phone</b>
+      You can reset or delete the advertising identifier outright. On Android
+      it is under Settings, then Privacy, then Ads. On iOS it is under
+      Settings, then Privacy and Security, then Tracking.</li>
+    <li><b>Or remove the ads entirely</b>
+      The one-off purchase in the shop stops the banner and the full screen ads
+      for good. Reward videos stay available, because those are ones you choose
+      to watch.</li>
   </ul>
 
   <h2>Purchases</h2>
-  <p>
-    Coin packs and the one-off ad removal are sold through Google Play and the
-    Apple App Store. When you buy something, the store handles the payment and
-    tells the app only whether the purchase succeeded. We never see your card
-    details, your billing address or your store account.
-  </p>
-  <p>
-    Google's handling of that transaction is covered by the
-    <a href="https://policies.google.com/privacy">Google Privacy Policy</a>,
-    and Apple's by the
-    <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.
-  </p>
+  <p>Coin packs and the ad removal are sold through Google Play and the Apple
+    App Store. The store takes the payment and tells the game one thing only:
+    whether it went through. Your card number, your billing address and your
+    store account never come near us.</p>
+  <p>Google's handling of that transaction is covered by the
+    <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, and
+    Apple's by the
+    <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
 
-  <h2>Notifications</h2>
-  <p>
-    Squeeze sends a few reminders a day about your own progress — the level you
-    stopped on, your best score, a gift waiting in the shop. They are written
-    on your phone from your own save file. Nothing about you is sent anywhere
-    to produce them, and there is no server involved.
-  </p>
-  <p>
-    You can turn them off under Settings → Reminders, or in your phone's own
-    notification settings for the app.
-  </p>
+  <h2>Reminders</h2>
+  <p>Squeeze sends a few notifications a day, and every one of them is about
+    your own progress. The level you stopped on. A score worth beating. A gift
+    sitting unclaimed in the shop. They are written on your phone, from your
+    own save file. Nothing about you is sent anywhere to produce them, and
+    there is no server involved at any point.</p>
+  <p>Turn them off under Settings, then Reminders, or in your phone's own
+    notification settings for the app.</p>
 
-  <h2>What we do not do</h2>
-  <ul>
-    <li>We do not collect names, email addresses or phone numbers.</li>
-    <li>We do not ask for your precise location, and the app has no location
-      permission.</li>
-    <li>We do not use analytics. Nothing reports to us about how you play.</li>
-    <li>We do not sell your data to anyone.</li>
-    <li>We do not knowingly direct the game at children under 13, and we do not
-      knowingly collect anything from them. Ad content is limited to the
-      "General audiences" rating.</li>
+  <h2>What Squeeze does not do</h2>
+  <ul class="nots">
+    <li><b>No analytics, anywhere in the game.</b> Nothing reports back to us
+      about how you play, how long you played, or how far you got. We genuinely
+      do not know.</li>
+    <li><b>No names, email addresses or phone numbers.</b> There is nothing to
+      type them into.</li>
+    <li><b>No precise location.</b> The app holds no location permission at
+      all.</li>
+    <li><b>Nothing is sold on.</b> Not to advertisers, not to data brokers, not
+      to anyone.</li>
+    <li><b>Not aimed at children under 13</b>, and ad content is capped at the
+      General audiences rating.</li>
   </ul>
 
   <h2>Permissions</h2>
-  <p>
-    The app asks for network access, which billing and ads both need, and for
-    permission to send notifications, which you can decline or revoke at any
-    time. It does not ask for the camera, the microphone, contacts, files or
-    location.
-  </p>
+  <p>Network access, which the ads and the purchases both need. Permission to
+    send notifications, which you can refuse outright or revoke later. That is
+    the whole list. No camera, no microphone, no contacts, no files, no
+    location.</p>
 
   <h2>Children</h2>
-  <p>
-    Squeeze is suitable for all ages, and ad content is restricted accordingly,
-    but the game is not aimed at children and is not part of a families
-    programme. Purchases are controlled by the store account on the device;
-    parents can require a password for every purchase in the Google Play or
-    App Store settings.
-  </p>
+  <p>Squeeze is suitable for all ages and its ads are rated accordingly, but
+    the game is not built for children and it is not part of Google's Families
+    programme. Purchases run through whichever store account is signed in on
+    the device. If you want every purchase to require a password, both Google
+    Play and the App Store let you set that, and it is worth doing on a phone a
+    child uses.</p>
 
   <h2>Your rights</h2>
-  <p>
-    Because we hold nothing about you, there is nothing for us to show you or
-    delete. Progress lives on your device and is removed when you uninstall the
-    app. For the advertising identifier, the controls listed above are the ones
-    that apply, and they are yours rather than ours. If you would like anything
-    about this confirmed in writing, use the contact address below.
-  </p>
+  <p>We hold nothing about you, so there is nothing for us to show you and
+    nothing for us to delete. Your progress lives on your phone and goes when
+    the app does. For the advertising identifier, the controls listed above are
+    the ones that apply, and they belong to you rather than to us. If you would
+    like any of that confirmed in writing, the address is below.</p>
 
-  <h2>Changes</h2>
-  <p>
-    If this policy ever changes, the new version will appear at this address
-    with a new date at the top. If a future version of the game ever collects
-    anything it does not collect today, it will say so here first.
-  </p>
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the new version appears at this address with a new
+    date at the top. If a future version of Squeeze ever collects something it
+    does not collect today, this page will say so before it does.</p>
 
-  <h2>Contact</h2>
-  <p>
-    Squeeze is published by <strong>Detnexa Technologies</strong>.
-  </p>
-  <p>
-    Questions about this policy:
-    <a href="mailto:privacy@detnexatechnologies.com">privacy@detnexatechnologies.com</a><br>
-    Anything else, including bugs and refunds:
-    <a href="mailto:support@detnexatechnologies.com">support@detnexatechnologies.com</a>
-  </p>
+  <section class="contact">
+    <img class="reef" src="assets/reef-band.jpg" width="1536" height="316" alt=""
+         aria-hidden="true">
+    <div class="contact-body">
+      <h2>Contact</h2>
+      <p class="who">Squeeze is published by Detnexa Technologies.</p>
+      <p>Questions about this policy:
+        <a href="mailto:privacy@detnexatechnologies.com">privacy@detnexatechnologies.com</a></p>
+      <p>Anything else, including bugs and refunds:
+        <a href="mailto:support@detnexatechnologies.com">support@detnexatechnologies.com</a></p>
+    </div>
+  </section>
 
-  <footer>Squeeze — a one-tap descent.</footer>
-</main>
+  <footer>Detnexa Technologies</footer>
+
+</div>
 </body>
 </html>
